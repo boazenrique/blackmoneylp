@@ -562,10 +562,13 @@ function Admission() {
             <p className="text-3xl md:text-4xl text-gold-gradient mb-2">12x de R$29,82</p>
             <p className="text-xs text-muted-foreground tracking-wider mb-6">ou R$297,00 à vista</p>
 
-            <button className="w-full inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-gold-deep via-gold to-gold-deep text-primary-foreground text-xs tracking-[0.3em] shadow-[0_10px_40px_-10px_oklch(0.78_0.13_82/0.5)] hover:shadow-[0_15px_50px_-10px_oklch(0.78_0.13_82/0.7)] transition-all">
+            <a
+              href="https://go.perfectpay.com.br/PPU38CQ1FG1"
+              className="w-full inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-gold-deep via-gold to-gold-deep text-primary-foreground text-xs tracking-[0.3em] shadow-[0_10px_40px_-10px_oklch(0.78_0.13_82/0.5)] hover:shadow-[0_15px_50px_-10px_oklch(0.78_0.13_82/0.7)] transition-all"
+            >
               QUERO MEU ACESSO AGORA
               <ArrowRight className="h-3.5 w-3.5" />
-            </button>
+            </a>
           </div>
         </div>
 

@@ -116,6 +116,17 @@ function RootShell({ children }: { children: ReactNode }) {
             __html: `history.scrollRestoration = "manual";`,
           }}
         />
+        {/* Pixel Utmify — rastreamento de eventos */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.pixelId = "6a3997222ea40bf4b2089302";
+var a = document.createElement("script");
+a.setAttribute("async", "");
+a.setAttribute("defer", "");
+a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+document.head.appendChild(a);`,
+          }}
+        />
         <HeadContent />
       </head>
       <body>
