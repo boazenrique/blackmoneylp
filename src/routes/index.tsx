@@ -193,6 +193,11 @@ function Index() {
   );
 }
 
+function scrollToOferta(e: React.MouseEvent<HTMLAnchorElement>) {
+  e.preventDefault();
+  document.getElementById("oferta")?.scrollIntoView({ behavior: "smooth" });
+}
+
 function Nav() {
   return (
     <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-background/70 border-b border-border/40">
@@ -203,6 +208,7 @@ function Nav() {
         </div>
         <a
           href="#oferta"
+          onClick={scrollToOferta}
           className="text-[10px] tracking-[0.25em] px-4 py-2 border border-gold/40 text-gold hover:bg-gold hover:text-primary-foreground transition-all"
         >
           ENTRAR
@@ -249,6 +255,7 @@ function Hero() {
 
         <a
           href="#oferta"
+          onClick={scrollToOferta}
           className="inline-flex items-center gap-3 px-10 py-4 bg-gradient-to-r from-gold-deep via-gold to-gold-deep text-primary-foreground text-xs tracking-[0.3em] shadow-[0_10px_40px_-10px_oklch(0.78_0.13_82/0.5)] hover:shadow-[0_15px_50px_-10px_oklch(0.78_0.13_82/0.7)] transition-all"
         >
           QUERO ENTRAR NA BLACK MONEY
