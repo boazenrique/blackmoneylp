@@ -127,6 +127,14 @@ a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
 document.head.appendChild(a);`,
           }}
         />
+        {/* Utmify — captura de UTMs (acompanha o pixel) */}
+        <script
+          src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+          data-utmify-prevent-xcod-sck=""
+          data-utmify-prevent-subids=""
+          async
+          defer
+        ></script>
         <HeadContent />
       </head>
       <body>
