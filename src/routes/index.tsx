@@ -186,6 +186,7 @@ function Index() {
       <Testimonials />
       <Founders />
       <Admission />
+      <Guarantee />
       <Experts />
       <Faq />
       <Footer />
@@ -525,56 +526,126 @@ function Founders() {
   );
 }
 
+const plans = [
+  {
+    name: "ACESSO BÁSICO",
+    highlight: false,
+    items: [
+      "Mais de 12 módulos de contéudo",
+      "Grupo Exclusivo de Networking no Discord",
+      "Acesso a ferramentas de IA para criação de funis e ofertas",
+      "Mineração de ofertas e espionagem avançada",
+      "Suporte 24/7 para tirar dúvidas e acelerar resultados",
+    ],
+    oldPrice: null,
+    price: "R$87,00",
+    priceNote: "à vista",
+    link: "https://go.perfectpay.com.br/PPU38CQE3J5",
+  },
+  {
+    name: "ACESSO VIP",
+    highlight: true,
+    items: [
+      "Mais de 12 módulos de contéudo",
+      "Mais de 15 Bônus Exclusivos",
+      "Grupo Exclusivo de Networking no Discord",
+      "Calls semanais com players e com convidados especiais",
+      "Acesso a ferramentas de IA para criação de funis e ofertas",
+      "Mineração de ofertas e espionagem avançada",
+      "Ofertas Validadas toda semana para você vender todos os dias",
+      "Suporte 24/7 para tirar dúvidas e acelerar resultados",
+    ],
+    oldPrice: "de R$1.997,90",
+    price: "12x de R$19,78",
+    priceNote: "ou R$197,00 à vista",
+    link: "https://go.perfectpay.com.br/PPU38CQ1FG1",
+  },
+];
+
 function Admission() {
   return (
     <section id="oferta" className="scroll-mt-16 py-24 px-6 border-t border-border/40">
-      <div className="mx-auto max-w-3xl text-center">
+      <div className="mx-auto max-w-5xl text-center">
         <div data-reveal>
           <p className="text-[10px] tracking-[0.5em] text-gold mb-4">INSCREVA-SE</p>
           <h2 className="text-3xl md:text-5xl text-gold-gradient mb-3">COMUNIDADE BLACK MONEY</h2>
           <p className="text-sm text-muted-foreground tracking-wider mb-16">A maior comunidade de Low Ticket da América Latina</p>
         </div>
 
-        <div data-reveal data-parallax data-speed="0.04" className="mx-auto max-w-sm border-gold-gradient p-10 bg-card/40 backdrop-blur">
-          <h3 className="text-lg text-gold mb-6 tracking-wide">
-            Veja tudo que você terá acesso
-          </h3>
-          <ul data-reveal-group className="text-left text-xs text-muted-foreground space-y-3 mb-8 font-medium">
-            {[
-              "Mais de 12 módulos de contéudo",
-              "Mais de 15 Bônus Exclusivos",
-              "Grupo Exclusivo de Networking no Discord",
-              "Calls semanais com players e com convidados especiais",
-              "Acesso a ferramentas de IA para criação de funis e ofertas",
-              "Mineração de ofertas e espionagem avançada",
-              "Ofertas Validadas toda semana para você vender todos os dias",
-              "Suporte 24/7 para tirar dúvidas e acelerar resultados",
-            ].map((i) => (
-              <li key={i} className="flex gap-3 items-start">
-                <span className="text-gold mt-0.5">◆</span>
-                <span>{i}</span>
-              </li>
-            ))}
-          </ul>
-          <div data-reveal className="border border-gold/40 bg-background/40 p-6">
-            <p className="text-xs text-muted-foreground line-through mb-1">de R$1.997,90</p>
-            <p className="text-xs text-destructive tracking-wider mb-3">por apenas...</p>
-            <p className="text-3xl md:text-4xl text-gold-gradient mb-2">12x de R$19,78</p>
-            <p className="text-xs text-muted-foreground tracking-wider mb-6">ou R$197,00 à vista</p>
-
-            <a
-              href="https://go.perfectpay.com.br/PPU38CQ1FG1"
-              className="w-full inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-gold-deep via-gold to-gold-deep text-primary-foreground text-xs tracking-[0.3em] shadow-[0_10px_40px_-10px_oklch(0.78_0.13_82/0.5)] hover:shadow-[0_15px_50px_-10px_oklch(0.78_0.13_82/0.7)] transition-all"
+        <div data-reveal-group className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start max-w-4xl mx-auto">
+          {plans.map((plan) => (
+            <div
+              key={plan.name}
+              className={`p-10 bg-card/40 backdrop-blur ${plan.highlight ? "border-gold-gradient" : "border border-border/60"}`}
             >
-              QUERO MEU ACESSO AGORA
-              <ArrowRight className="h-3.5 w-3.5" />
-            </a>
-          </div>
+              <p className="text-[10px] tracking-[0.4em] text-gold mb-2">{plan.name}</p>
+              <h3 className="text-lg text-gold mb-6 tracking-wide">
+                Veja tudo que você terá acesso
+              </h3>
+              <ul className="text-left text-xs text-muted-foreground space-y-3 mb-8 font-medium">
+                {plan.items.map((i) => (
+                  <li key={i} className="flex gap-3 items-start">
+                    <span className="text-gold mt-0.5">◆</span>
+                    <span>{i}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="border border-gold/40 bg-background/40 p-6">
+                {plan.oldPrice && (
+                  <>
+                    <p className="text-xs text-muted-foreground line-through mb-1">{plan.oldPrice}</p>
+                    <p className="text-xs text-destructive tracking-wider mb-3">por apenas...</p>
+                  </>
+                )}
+                <p className="text-3xl md:text-4xl text-gold-gradient mb-2">{plan.price}</p>
+                <p className="text-xs text-muted-foreground tracking-wider mb-6">{plan.priceNote}</p>
+
+                <a
+                  href={plan.link}
+                  className="w-full inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-gold-deep via-gold to-gold-deep text-primary-foreground text-xs tracking-[0.3em] shadow-[0_10px_40px_-10px_oklch(0.78_0.13_82/0.5)] hover:shadow-[0_15px_50px_-10px_oklch(0.78_0.13_82/0.7)] transition-all"
+                >
+                  QUERO MEU ACESSO AGORA
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </a>
+              </div>
+            </div>
+          ))}
         </div>
 
         <p className="text-[10px] tracking-[0.3em] text-muted-foreground mt-10">
           AS VAGAS SÃO LIMITADAS PARA PRESERVAR O PADRÃO DE EXCELÊNCIA
         </p>
+      </div>
+    </section>
+  );
+}
+
+function Guarantee() {
+  return (
+    <section className="py-24 px-6 border-t border-border/40">
+      <div className="mx-auto max-w-3xl text-center">
+        <div data-reveal>
+          <p className="text-[10px] tracking-[0.5em] text-gold mb-4">RISCO ZERO</p>
+          <h2 className="text-3xl md:text-5xl text-gold-gradient mb-16">Garantia de 30 dias</h2>
+        </div>
+
+        <div data-reveal data-parallax data-speed="0.08" className="max-w-[220px] md:max-w-[260px] mx-auto mb-12">
+          <img src="/images/garantia.png" alt="Garantia de 30 dias — seu dinheiro de volta" className="w-full h-auto" />
+        </div>
+
+        <div data-reveal-group className="space-y-5 text-sm text-muted-foreground leading-relaxed max-w-2xl mx-auto font-medium text-center">
+          <p>Quero deixar uma coisa bem clara: a Black Money não é para qualquer pessoa.</p>
+          <p>
+            Ela foi criada para quem está decidido a crescer, executar e construir resultados de verdade. Se
+            você procura atalhos ou dinheiro fácil, essa comunidade não é para você.
+          </p>
+          <p>
+            Justamente por acreditar no que entrego, eu assumo todo o risco. Você terá 30 dias de garantia
+            para conhecer a comunidade, aplicar as estratégias e explorar todo o conteúdo. Se perceber que ela
+            não faz sentido para você, basta solicitar o reembolso e eu devolvo 100% do seu investimento.
+          </p>
+          <p>Agora, se você está pronto para fazer acontecer, será um prazer ter você na Black Money.</p>
+        </div>
       </div>
     </section>
   );
