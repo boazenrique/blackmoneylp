@@ -557,10 +557,10 @@ function Admission() {
             ))}
           </ul>
           <div data-reveal className="border border-gold/40 bg-background/40 p-6">
-            <p className="text-xs text-muted-foreground line-through mb-1">de R$997,90</p>
+            <p className="text-xs text-muted-foreground line-through mb-1">de R$1.997,90</p>
             <p className="text-xs text-destructive tracking-wider mb-3">por apenas...</p>
-            <p className="text-3xl md:text-4xl text-gold-gradient mb-2">12x de R$9,74</p>
-            <p className="text-xs text-muted-foreground tracking-wider mb-6">ou R$97,00 à vista</p>
+            <p className="text-3xl md:text-4xl text-gold-gradient mb-2">12x de R$19,78</p>
+            <p className="text-xs text-muted-foreground tracking-wider mb-6">ou R$197,00 à vista</p>
 
             <a
               href="https://go.perfectpay.com.br/PPU38CQ1FG1"
