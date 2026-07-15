@@ -540,7 +540,7 @@ const plans = [
     oldPrice: null,
     price: "R$87,00",
     priceNote: "à vista",
-    link: "https://go.perfectpay.com.br/PPU38CQE3J5",
+    link: "https://go.boazenrique.com.br/PPU38CQE3J5",
   },
   {
     name: "ACESSO VIP",
@@ -558,7 +558,7 @@ const plans = [
     oldPrice: "de R$1.997,90",
     price: "12x de R$19,78",
     priceNote: "ou R$197,00 à vista",
-    link: "https://go.perfectpay.com.br/PPU38CQ1FG1",
+    link: "https://go.boazenrique.com.br/PPU38CQ1FG1",
   },
 ];
 
