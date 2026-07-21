@@ -32,24 +32,31 @@ const journey = [
 
 const subjects = Array.from({ length: 21 }, (_, i) => i + 1);
 
-const notFor = [
-  "Pra quem quer ganhar dinheiro rápido e fácil",
-  "Pra quem quer só fazer um caixa rápido",
-  "Pra quem acha que Low Ticket não dá resultados",
-  "Pra quem tem preguiça de aprender e executar",
-  "Pra quem acha que existe ferramentas milagrosas que vai fazer tudo",
-  "Pra quem quer vender no automático sem fazer nada",
-  "Pra quem acha que vai ficar rico do dia pra noite",
-];
-
-const isFor = [
-  "Pra quem tem sede de resultado e quer mudar o jogo no digital",
-  "Pra quem não tem preguiça de aprender e executar",
-  "Pra quem quer vender todos os dias com consitência sem atalhos milagrosos",
-  "Pra quem quer dominar IA e sair na frente da concorrência",
-  "Pra quem já vende no digital, mas quer escalar sua operação para 6D/mês",
-  "Pra quem busca networking e quer estar próximo dos maiores players do mercado",
-  "Pra quem quer realmente quer faturar +de 100mil/mês com Low Ticket",
+const stages = [
+  {
+    title: "Quero construir minha primeira operação de Low Ticket.",
+    desc: "Aprenda do jeito certo desde o início, evitando anos de tentativa e erro e construindo uma estrutura preparada para escalar.",
+    items: [
+      "Criação e validação de ofertas",
+      "Funis criados com IA",
+      "Páginas e copy de alta conversão",
+      "Primeiros anúncios no Facebook Ads",
+      "Primeiras vendas com consistência",
+      "Acompanhamento da comunidade",
+    ],
+  },
+  {
+    title: "Quero escalar minha operação para múltiplos 6 dígitos por mês.",
+    desc: "Descubra como construir uma operação previsível utilizando IA, ofertas validadas e processos que escalam sem depender de um criativo vencedor.",
+    items: [
+      "Escala avançada no Facebook Ads",
+      "Mineração de ofertas milionárias",
+      "Espionagem de mercado",
+      "Agentes de IA e automações",
+      "Networking com grandes players",
+      "Estratégias para operações de +100K/mês",
+    ],
+  },
 ];
 
 const testimonials = [8, 7, 6, 5, 4, 3, 2, 1];
@@ -180,6 +187,7 @@ function Index() {
     <div ref={root} className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Nav />
       <Hero />
+      <TestimonialCarousel />
       <Journey />
       <Subjects />
       <Pillars />
@@ -262,6 +270,10 @@ function Hero() {
           QUERO ENTRAR NA BLACK MONEY
           <ArrowRight className="h-3.5 w-3.5" />
         </a>
+
+        <p className="text-[10px] text-muted-foreground tracking-wider mt-4">
+          Acesso à comunidade, conteúdos, mineração e criação de ofertas ao vivo toda semana.
+        </p>
       </div>
     </section>
   );
@@ -272,8 +284,8 @@ function Journey() {
     <section className="relative py-24 px-6 border-t border-border/40">
       <div className="mx-auto max-w-7xl">
         <div data-reveal className="text-center mb-20">
-          <h2 className="text-3xl md:text-5xl text-gold-gradient mb-3">O ambiente certo pra quem escala <br></br> de verdade no digital</h2>
-          <p className="text-sm text-muted-foreground tracking-wider">Tudo que você procura reunido em um só lugar</p>
+          <h2 className="text-3xl md:text-5xl text-gold-gradient mb-3">O ambiente certo pra quem quer escalar <br></br> de verdade no digital</h2>
+          <p className="text-sm text-muted-foreground tracking-wider">Veja tudo o que você irá ter acesso:</p>
         </div>
 
         <div className="relative">
@@ -308,7 +320,7 @@ function Subjects() {
           <h2 className="text-3xl md:text-4xl text-gold-gradient mb-3">
             +12 Módulos e mais de 15 Bônus
           </h2>
-          <p className="text-sm text-muted-foreground tracking-wider">Conteúdo do Básico até o Avançado pra você faturar de verdade</p>
+          <p className="text-sm text-muted-foreground tracking-wider">Conteúdo do Básico até o Avançado 100% atualizado pra você ter resultados reais</p>
         </div>
       </div>
 
@@ -347,34 +359,32 @@ function Pillars() {
     <section className="py-24 px-6 border-t border-border/40">
       <div className="mx-auto max-w-6xl">
         <div data-reveal className="text-center mb-16">
-          <p className="text-[10px] tracking-[0.5em] text-gold mb-4">A verdade liberta</p>
-          <h2 className="text-3xl md:text-5xl text-gold-gradient">Tenha resultados sem atalhos milagrosos</h2>
+          <h2 className="text-3xl md:text-5xl text-gold-gradient mb-6">Em qual momento você está hoje?</h2>
+          <p className="text-sm text-muted-foreground leading-relaxed max-w-2xl mx-auto font-medium">
+            A Comunidade Black Money acompanha você desde a criação da primeira oferta até a construção de uma
+            operação de Low Ticket que fatura múltiplos 6 dígitos por mês.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div data-slide="left" className="border border-destructive/30 bg-card/60 backdrop-blur p-8">
-            <h3 className="text-lg text-destructive mb-6 tracking-wider text-center">Pra quem não é a Black Money</h3>
-            <ul className="space-y-4">
-              {notFor.map((item) => (
-                <li key={item} className="flex gap-3 items-start text-xs text-muted-foreground leading-relaxed font-medium">
-                  <span className="text-destructive shrink-0">❌</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div data-slide="right" className="border border-gold/30 bg-card/60 backdrop-blur p-8">
-            <h3 className="text-lg text-gold mb-6 tracking-wider text-center">Pra quem é a Black Money</h3>
-            <ul className="space-y-4">
-              {isFor.map((item) => (
-                <li key={item} className="flex gap-3 items-start text-xs text-muted-foreground leading-relaxed font-medium">
-                  <span className="text-gold shrink-0">✅</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {stages.map((stage, i) => (
+            <div
+              key={stage.title}
+              data-slide={i === 0 ? "left" : "right"}
+              className="border border-gold/30 bg-card/60 backdrop-blur p-8"
+            >
+              <h3 className="text-lg text-gold mb-4 tracking-wide">{stage.title}</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed font-medium mb-6">{stage.desc}</p>
+              <ul className="space-y-4">
+                {stage.items.map((item) => (
+                  <li key={item} className="flex gap-3 items-start text-xs text-muted-foreground leading-relaxed font-medium">
+                    <span className="text-gold shrink-0">✅</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -419,7 +429,7 @@ function PandaVideo({ id }: { id: string }) {
   );
 }
 
-function Testimonials() {
+function TestimonialCarousel() {
   const [index, setIndex] = useState(0);
   const total = testimonials.length;
   const prev = () => setIndex((i) => (i - 1 + total) % total);
@@ -470,8 +480,22 @@ function Testimonials() {
             />
           ))}
         </div>
+      </div>
+    </section>
+  );
+}
 
-        <div data-reveal-group className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-16">
+function Testimonials() {
+  return (
+    <section className="py-24 px-6 border-t border-border/40">
+      <div className="mx-auto max-w-3xl">
+        <div data-reveal className="text-center mb-16">
+          <h2 className="text-3xl md:text-5xl text-gold-gradient">
+            Veja o que aconteceu quando eles pararam de tentar sozinhos
+          </h2>
+        </div>
+
+        <div data-reveal-group className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {pandaVideos.map((id) => (
             <PandaVideo key={id} id={id} />
           ))}
@@ -567,7 +591,7 @@ function Admission() {
     <section id="oferta" className="scroll-mt-16 py-24 px-6 border-t border-border/40">
       <div className="mx-auto max-w-5xl text-center">
         <div data-reveal>
-          <p className="text-[10px] tracking-[0.5em] text-gold mb-4">INSCREVA-SE</p>
+          <p className="text-[10px] tracking-[0.5em] text-gold mb-4">GARANTA SUA VAGA</p>
           <h2 className="text-3xl md:text-5xl text-gold-gradient mb-3">COMUNIDADE BLACK MONEY</h2>
           <p className="text-sm text-muted-foreground tracking-wider mb-16">A maior comunidade de Low Ticket da América Latina</p>
         </div>
