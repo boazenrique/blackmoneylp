@@ -255,10 +255,15 @@ function Hero() {
     <section className="relative pt-40 pb-24 px-6">
       <div data-hero className="mx-auto max-w-5xl text-center">
         <h1 className="text-3xl md:text-6xl lg:text-6xl leading-[1.05] mb-10">
-          Construa uma operação de
-          <span className="text-gold-gradient"> Low Ticket com IA</span> <br />
+          Construa uma operação de{" "}
+          <span className="text-gold-gradient whitespace-nowrap">Low Ticket com IA</span> <br />
           que fatura múltiplos 6 dígitos por mês sem aparecer<br />
         </h1>
+
+        <p className="text-sm md:text-base text-muted-foreground tracking-wide max-w-2xl mx-auto mb-10">
+          Tudo o que você precisa para construir uma operação de Low Ticket que vende todos os dias, em um só
+          lugar.
+        </p>
 
         <HeroVideo />
 
@@ -378,7 +383,7 @@ function Pillars() {
               <ul className="space-y-4">
                 {stage.items.map((item) => (
                   <li key={item} className="flex gap-3 items-start text-xs text-muted-foreground leading-relaxed font-medium">
-                    <span className="text-gold shrink-0">✅</span>
+                    <span className="text-gold shrink-0">✦</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -567,7 +572,7 @@ const plans = [
     link: "https://go.boazenrique.com.br/PPU38CQE3J5",
   },
   {
-    name: "ACESSO VIP",
+    name: "ACESSO PREMIUM",
     highlight: true,
     items: [
       "Mais de 12 módulos de contéudo",
@@ -591,7 +596,7 @@ function Admission() {
     <section id="oferta" className="scroll-mt-16 py-24 px-6 border-t border-border/40">
       <div className="mx-auto max-w-5xl text-center">
         <div data-reveal>
-          <p className="text-[10px] tracking-[0.5em] text-gold mb-4">GARANTA SUA VAGA</p>
+          <p className="text-[10px] tracking-[0.5em] text-gold mb-4">VAGAS LIMITADAS</p>
           <h2 className="text-3xl md:text-5xl text-gold-gradient mb-3">COMUNIDADE BLACK MONEY</h2>
           <p className="text-sm text-muted-foreground tracking-wider mb-16">A maior comunidade de Low Ticket da América Latina</p>
         </div>
