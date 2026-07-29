@@ -187,6 +187,7 @@ function Index() {
     <div ref={root} className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Nav />
       <Hero />
+      <Awakening />
       <TestimonialCarousel />
       <Journey />
       <Subjects />
@@ -260,11 +261,6 @@ function Hero() {
           que fatura múltiplos 6 dígitos por mês sem aparecer<br />
         </h1>
 
-        <p className="text-sm md:text-base text-muted-foreground tracking-wide max-w-2xl mx-auto mb-10">
-          Tudo o que você precisa para construir uma operação de Low Ticket que vende todos os dias, em um só
-          lugar.
-        </p>
-
         <HeroVideo />
 
         <a
@@ -279,6 +275,44 @@ function Hero() {
         <p className="text-[10px] text-muted-foreground tracking-wider mt-4">
           Acesso à comunidade, conteúdos, mineração e criação de ofertas ao vivo toda semana.
         </p>
+      </div>
+    </section>
+  );
+}
+
+function Awakening() {
+  return (
+    <section className="py-24 px-6 border-t border-border/40">
+      <div className="mx-auto max-w-3xl text-center">
+        <h2 data-reveal className="text-3xl md:text-5xl text-gold-gradient mb-16">
+          Deixa eu adivinhar...
+        </h2>
+
+        <div data-reveal-group className="space-y-5 text-sm text-muted-foreground leading-relaxed max-w-2xl mx-auto font-medium text-center">
+          <p>Você já comprou mais um curso prometendo mudar sua vida.</p>
+          <p>
+            Assistiu dezenas de aulas… Copiou exatamente o que ensinaram… Gastou dinheiro com tráfego… E
+            perdeu mais uma vez.
+          </p>
+          <p>Sabe por quê?</p>
+          <p>Porque a maioria das pessoas que ensina marketing digital nunca construiu uma operação de verdade.</p>
+          <p>Vivem vendendo curso sobre vender curso.</p>
+          <p>
+            Enquanto isso, quem realmente fatura alto está ocupado testando ofertas, criando funis, usando IA
+            e compartilhando estratégias com pessoas que também fazem dinheiro todos os dias.
+          </p>
+          <p className="text-gold text-base">O seu problema não é falta de informação. É falta de ambiente!</p>
+          <p>Você nunca vai construir uma operação de 6 dígitos andando com pessoas que nunca chegaram lá.</p>
+          <p>Foi exatamente por isso que eu criei a Comunidade Black Money.</p>
+          <p>
+            Um ambiente onde você aprende diretamente com quem constrói operações reais de Low Ticket,
+            acompanha implementações ao vivo, recebe ofertas validadas, networking com players e acesso às
+            estratégias que estão funcionando hoje.
+          </p>
+          <p className="text-foreground">
+            Porque, no digital, você cresce na velocidade das pessoas com quem escolhe andar.
+          </p>
+        </div>
       </div>
     </section>
   );
@@ -557,22 +591,7 @@ function Founders() {
 
 const plans = [
   {
-    name: "ACESSO BÁSICO",
-    highlight: false,
-    items: [
-      "Mais de 12 módulos de contéudo",
-      "Grupo Exclusivo de Networking no Discord",
-      "Acesso a ferramentas de IA para criação de funis e ofertas",
-      "Mineração de ofertas e espionagem avançada",
-      "Suporte 24/7 para tirar dúvidas e acelerar resultados",
-    ],
-    oldPrice: null,
-    price: "R$87,00",
-    priceNote: "à vista",
-    link: "https://go.boazenrique.com.br/PPU38CQE3J5",
-  },
-  {
-    name: "ACESSO PREMIUM",
+    name: "INVESTIMENTO",
     highlight: true,
     items: [
       "Mais de 12 módulos de contéudo",
@@ -585,7 +604,8 @@ const plans = [
       "Suporte 24/7 para tirar dúvidas e acelerar resultados",
     ],
     oldPrice: "de R$1.997,90",
-    price: "12x de R$19,78",
+    installments: "12x",
+    price: "R$19,78",
     priceNote: "ou R$197,00 à vista",
     link: "https://go.boazenrique.com.br/PPU38CQ1FG1",
   },
@@ -597,19 +617,17 @@ function Admission() {
       <div className="mx-auto max-w-5xl text-center">
         <div data-reveal>
           <p className="text-[10px] tracking-[0.5em] text-gold mb-4">VAGAS LIMITADAS</p>
-          <h2 className="text-3xl md:text-5xl text-gold-gradient mb-3">COMUNIDADE BLACK MONEY</h2>
-          <p className="text-sm text-muted-foreground tracking-wider mb-16">A maior comunidade de Low Ticket da América Latina</p>
+          <h2 className="text-3xl md:text-5xl text-gold-gradient mb-16">COMUNIDADE BLACK MONEY</h2>
         </div>
 
-        <div data-reveal-group className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start max-w-4xl mx-auto">
+        <div data-reveal-group className="grid grid-cols-1 max-w-md mx-auto">
           {plans.map((plan) => (
             <div
               key={plan.name}
               className={`p-10 bg-card/40 backdrop-blur ${plan.highlight ? "border-gold-gradient" : "border border-border/60"}`}
             >
-              <p className="text-[10px] tracking-[0.4em] text-gold mb-2">{plan.name}</p>
               <h3 className="text-lg text-gold mb-6 tracking-wide">
-                Veja tudo que você terá acesso
+                Faça parte da maior comunidade de Low Ticket da América Latina
               </h3>
               <ul className="text-left text-xs text-muted-foreground space-y-3 mb-8 font-medium">
                 {plan.items.map((i) => (
@@ -626,14 +644,21 @@ function Admission() {
                     <p className="text-xs text-destructive tracking-wider mb-3">por apenas...</p>
                   </>
                 )}
-                <p className="text-3xl md:text-4xl text-gold-gradient mb-2">{plan.price}</p>
+                <div className="flex items-center justify-center gap-2 mb-2">
+                  <span className="text-[9px] leading-tight text-gold tracking-wider text-left uppercase">
+                    {plan.installments}
+                    <br />
+                    DE
+                  </span>
+                  <span className="text-4xl md:text-5xl text-gold-gradient">{plan.price}</span>
+                </div>
                 <p className="text-xs text-muted-foreground tracking-wider mb-6">{plan.priceNote}</p>
 
                 <a
                   href={plan.link}
                   className="w-full inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-gold-deep via-gold to-gold-deep text-primary-foreground text-xs tracking-[0.3em] shadow-[0_10px_40px_-10px_oklch(0.78_0.13_82/0.5)] hover:shadow-[0_15px_50px_-10px_oklch(0.78_0.13_82/0.7)] transition-all"
                 >
-                  QUERO MEU ACESSO AGORA
+                  QUERO MEU ACESSO NA BLACK MONEY
                   <ArrowRight className="h-3.5 w-3.5" />
                 </a>
               </div>
