@@ -255,10 +255,10 @@ function Hero() {
   return (
     <section className="relative pt-40 pb-24 px-6">
       <div data-hero className="mx-auto max-w-5xl text-center">
-        <h1 className="text-3xl md:text-6xl lg:text-6xl leading-[1.05] mb-10">
-          Construa uma operação de{" "}
-          <span className="text-gold-gradient whitespace-nowrap">Low Ticket com IA</span> <br />
-          que fatura múltiplos 6 dígitos por mês sem aparecer<br />
+        <h1 className="text-xl md:text-4xl lg:text-5xl leading-[1.15] mb-10">
+          Faça parte da{" "}
+          <span className="text-gold-gradient whitespace-nowrap">Comunidade Black Money</span> e aprenda de uma vez por todas<br />
+          como vender Low Ticket todos os dias, sem aparecer e usando IA.
         </h1>
 
         <HeroVideo />
@@ -289,7 +289,7 @@ function Awakening() {
         </h2>
 
         <div data-reveal-group className="space-y-5 text-sm text-muted-foreground leading-relaxed max-w-2xl mx-auto font-medium text-center">
-          <p>Você já comprou mais um curso prometendo mudar sua vida.</p>
+          <p>Você comprou milhares de cursos prometendo mudar sua vida.</p>
           <p>
             Assistiu dezenas de aulas… Copiou exatamente o que ensinaram… Gastou dinheiro com tráfego… E
             perdeu mais uma vez.
@@ -302,12 +302,12 @@ function Awakening() {
             e compartilhando estratégias com pessoas que também fazem dinheiro todos os dias.
           </p>
           <p className="text-gold text-base">O seu problema não é falta de informação. É falta de ambiente!</p>
-          <p>Você nunca vai construir uma operação de 6 dígitos andando com pessoas que nunca chegaram lá.</p>
+          <p>Você nunca vai ter resultados reais, andando com pessoas que nunca chegaram lá.</p>
           <p>Foi exatamente por isso que eu criei a Comunidade Black Money.</p>
           <p>
             Um ambiente onde você aprende diretamente com quem constrói operações reais de Low Ticket,
             acompanha implementações ao vivo, recebe ofertas validadas, networking com players e acesso às
-            estratégias que estão funcionando hoje.
+            estratégias que estão funcionando agora.
           </p>
           <p className="text-foreground">
             Porque, no digital, você cresce na velocidade das pessoas com quem escolhe andar.
@@ -323,7 +323,7 @@ function Journey() {
     <section className="relative py-24 px-6 border-t border-border/40">
       <div className="mx-auto max-w-7xl">
         <div data-reveal className="text-center mb-20">
-          <h2 className="text-3xl md:text-5xl text-gold-gradient mb-3">O ambiente certo pra quem quer escalar <br></br> de verdade no digital</h2>
+          <h2 className="text-3xl md:text-5xl text-gold-gradient mb-3">O ambiente certo pra quem quer vender <br></br> de verdade no digital</h2>
           <p className="text-sm text-muted-foreground tracking-wider">Veja tudo o que você irá ter acesso:</p>
         </div>
 
@@ -401,7 +401,7 @@ function Pillars() {
           <h2 className="text-3xl md:text-5xl text-gold-gradient mb-6">Em qual momento você está hoje?</h2>
           <p className="text-sm text-muted-foreground leading-relaxed max-w-2xl mx-auto font-medium">
             A Comunidade Black Money acompanha você desde a criação da primeira oferta até a construção de uma
-            operação de Low Ticket que fatura múltiplos 6 dígitos por mês.
+            operação de Low Ticket que fatura +de R$100.000 todos os meses.
           </p>
         </div>
 
@@ -626,8 +626,8 @@ function Admission() {
               key={plan.name}
               className={`p-10 bg-card/40 backdrop-blur ${plan.highlight ? "border-gold-gradient" : "border border-border/60"}`}
             >
-              <h3 className="text-lg text-gold mb-6 tracking-wide">
-                Faça parte da maior comunidade de Low Ticket da América Latina
+              <h3 className="text-sm md:text-lg text-gold mb-6 tracking-wide">
+                Faça parte da Comunidade Black Money e venda Low Ticket todos os dias sem aparecer usando IA
               </h3>
               <ul className="text-left text-xs text-muted-foreground space-y-3 mb-8 font-medium">
                 {plan.items.map((i) => (
