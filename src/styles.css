@@ -114,6 +114,17 @@
   to { transform: translateX(-50%); }
 }
 
+@keyframes checkout-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-checkout-pulse {
+    animation: checkout-pulse 1.8s ease-in-out infinite;
+  }
+}
+
 @keyframes marquee-right {
   from { transform: translateX(-50%); }
   to { transform: translateX(0); }

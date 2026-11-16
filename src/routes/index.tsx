@@ -251,6 +251,19 @@ function HeroVideo() {
   );
 }
 
+const checkoutUrl = "https://go.perfectpay.com.br/PPU38CQHKKI";
+
+function OfferPrice() {
+  return (
+    <>
+      <p className="text-xs text-muted-foreground mb-1">De <s>R$297,00</s></p>
+      <p className="text-xs text-gold tracking-wider mb-3">por apenas</p>
+      <p className="text-4xl md:text-5xl text-gold-gradient mb-2">R$19,90</p>
+      <p className="text-xs text-muted-foreground tracking-wider mb-6">à vista ou 3x de R$7,03</p>
+    </>
+  );
+}
+
 function Hero() {
   return (
     <section className="relative pt-40 pb-24 px-6">
@@ -263,14 +276,16 @@ function Hero() {
 
         <HeroVideo />
 
-        <a
-          href="#oferta"
-          onClick={scrollToOferta}
-          className="inline-flex items-center gap-3 px-10 py-4 bg-gradient-to-r from-gold-deep via-gold to-gold-deep text-primary-foreground text-xs tracking-[0.3em] shadow-[0_10px_40px_-10px_oklch(0.78_0.13_82/0.5)] hover:shadow-[0_15px_50px_-10px_oklch(0.78_0.13_82/0.7)] transition-all"
-        >
-          QUERO ENTRAR NA BLACK MONEY
-          <ArrowRight className="h-3.5 w-3.5" />
-        </a>
+        <div className="mx-auto max-w-md border border-gold/40 bg-card/60 p-6 sm:p-8">
+          <OfferPrice />
+          <a
+            href={checkoutUrl}
+            className="hero-checkout-pulse w-full inline-flex items-center justify-center gap-3 px-5 py-4 bg-gradient-to-r from-gold-deep via-gold to-gold-deep text-primary-foreground text-xs tracking-[0.2em] shadow-[0_10px_40px_-10px_oklch(0.78_0.13_82/0.5)] hover:shadow-[0_15px_50px_-10px_oklch(0.78_0.13_82/0.7)] transition-all"
+          >
+            QUERO ENTRAR NA BLACK MONEY
+            <ArrowRight className="h-3.5 w-3.5 shrink-0" />
+          </a>
+        </div>
 
         <p className="text-[10px] text-muted-foreground tracking-wider mt-4">
           Acesso à comunidade, conteúdos, mineração e criação de ofertas ao vivo toda semana.
@@ -603,11 +618,6 @@ const plans = [
       "Ofertas Validadas toda semana para você vender todos os dias",
       "Suporte 24/7 para tirar dúvidas e acelerar resultados",
     ],
-    oldPrice: "de R$1.997,90",
-    installments: "12x",
-    price: "R$19,78",
-    priceNote: "ou R$197,00 à vista",
-    link: "https://go.boazenrique.com.br/PPU38CQ1FG1",
   },
 ];
 
@@ -638,24 +648,10 @@ function Admission() {
                 ))}
               </ul>
               <div className="border border-gold/40 bg-background/40 p-6">
-                {plan.oldPrice && (
-                  <>
-                    <p className="text-xs text-muted-foreground line-through mb-1">{plan.oldPrice}</p>
-                    <p className="text-xs text-destructive tracking-wider mb-3">por apenas...</p>
-                  </>
-                )}
-                <div className="flex items-center justify-center gap-2 mb-2">
-                  <span className="text-[9px] leading-tight text-gold tracking-wider text-left uppercase">
-                    {plan.installments}
-                    <br />
-                    DE
-                  </span>
-                  <span className="text-4xl md:text-5xl text-gold-gradient">{plan.price}</span>
-                </div>
-                <p className="text-xs text-muted-foreground tracking-wider mb-6">{plan.priceNote}</p>
+                <OfferPrice />
 
                 <a
-                  href={plan.link}
+                  href={checkoutUrl}
                   className="w-full inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-gold-deep via-gold to-gold-deep text-primary-foreground text-xs tracking-[0.3em] shadow-[0_10px_40px_-10px_oklch(0.78_0.13_82/0.5)] hover:shadow-[0_15px_50px_-10px_oklch(0.78_0.13_82/0.7)] transition-all"
                 >
                   QUERO MEU ACESSO NA BLACK MONEY
