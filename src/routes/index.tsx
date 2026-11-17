@@ -251,7 +251,7 @@ function HeroVideo() {
   );
 }
 
-const checkoutUrl = "https://checkout.perfectpay.com.br/pay/PPU38CQHKKI";
+const checkoutUrl = "https://pay.cakto.com.br/xri6xuf_1307080";
 
 function OfferPrice() {
   return (
