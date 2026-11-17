@@ -251,7 +251,7 @@ function HeroVideo() {
   );
 }
 
-const checkoutUrl = "https://go.perfectpay.com.br/PPU38CQHKKI";
+const checkoutUrl = "https://checkout.perfectpay.com.br/pay/PPU38CQHKKI";
 
 function OfferPrice() {
   return (
