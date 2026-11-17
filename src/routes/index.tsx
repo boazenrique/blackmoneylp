@@ -276,7 +276,7 @@ function Hero() {
 
         <HeroVideo />
 
-        <div className="mx-auto max-w-md border border-gold/40 bg-card/60 p-6 sm:p-8">
+        <div className="mx-auto max-w-md">
           <OfferPrice />
           <a
             href={checkoutUrl}
