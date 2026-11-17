@@ -119,7 +119,7 @@ function RootShell({ children }: { children: ReactNode }) {
         {/* Pixel Utmify — rastreamento de eventos */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `window.pixelId = "6a3997222ea40bf4b2089302";
+            __html: `window.pixelId = "6afc70c39b8d79b6166e2525";
 var a = document.createElement("script");
 a.setAttribute("async", "");
 a.setAttribute("defer", "");
